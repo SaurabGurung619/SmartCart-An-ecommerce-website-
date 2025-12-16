@@ -1,0 +1,31 @@
+.footer {
+    background: #1c1c1c;
+    color: #fff;
+  
+    a {
+      transition: color 0.3s ease;
+      &:hover {
+        color: #0d6efd;
+      }
+    }
+  
+    .text-gradient {
+      background: linear-gradient(to right, #0d6efd, #6610f2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  
+    i {
+      color: #0d6efd;
+    }
+  
+    ul {
+      padding: 0;
+      list-style: none;
+    }
+  
+    .border-light-subtle {
+      border-color: rgba(255, 255, 255, 0.1) !important;
+    }
+  }
+  

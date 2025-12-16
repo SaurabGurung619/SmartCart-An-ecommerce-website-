@@ -1,0 +1,70 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="#">SmartKart Admin</a>
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a routerLink="/users" routerLinkActive="active" class="nav-link">User List</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/create-user" routerLinkActive="active" class="nav-link">Add User</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- User List Table -->
+<div class="container">
+  <h2 class="text-center mb-4">User List</h2>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped shadow-sm">
+      <thead class="table-light">
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Location</th>
+          <th>Landmark</th>
+          <th>Password</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th class="text-center">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.location }}</td>
+          <td>{{ user.landmark }}</td>
+          <td>{{ user.password }}</td>
+          <td>{{ user.role }}</td>
+          <td>
+            <span class="badge bg-success" *ngIf="user.status === 'ACTIVE'">Active</span>
+            <span class="badge bg-secondary" *ngIf="user.status === 'INACTIVE'">Inactive</span>
+          </td>
+          <td class="text-center">
+            <button (click)="updateUser(user.id!)" class="btn btn-sm btn-outline-info me-2">
+              <i class="bi bi-pencil-square"></i> Update
+            </button>
+            <button (click)="deleteUser(user.id!)" class="btn btn-sm btn-outline-danger me-2">
+              <i class="bi bi-trash"></i> Delete
+            </button>
+            <button (click)="userDetails(user.id!)" class="btn btn-sm btn-outline-primary">
+              <i class="bi bi-eye"></i> View
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Back Button -->
+  <div class="text-center mt-4">
+    <a routerLink="/home">
+      <button class="btn btn-success px-4 py-2 rounded">Back</button>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+.register-container {
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  }
+  
+  .btn-gradient {
+    background: linear-gradient(to right, #ff512f, #dd2476);
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  .btn-gradient:hover {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(to right, #ff512f, #dd2476);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  

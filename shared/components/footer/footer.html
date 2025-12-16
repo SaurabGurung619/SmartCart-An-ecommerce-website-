@@ -1,0 +1,46 @@
+<footer class="footer bg-dark text-white pt-5 pb-4 mt-5">
+    <div class="container text-md-left">
+      <div class="row">
+  
+        <!-- Brand Description -->
+        <div class="col-md-3 mb-4">
+          <h5 class="text-uppercase fw-bold text-gradient mb-3">{{ appName }}</h5>
+          <p>SmartKart is your go-to destination for smart, stylish, and secure IoT shopping. Built for speed, simplicity, and satisfaction.</p>
+        </div>
+  
+        <!-- Quick Links -->
+        <div class="col-md-3 mb-4">
+          <h6 class="text-uppercase fw-bold mb-3">Quick Links</h6>
+          <ul class="list-unstyled">
+            <li *ngFor="let link of quickLinks">
+              <a [routerLink]="link.path" class="text-white text-decoration-none d-block mb-2">{{ link.label }}</a>
+            </li>
+          </ul>
+        </div>
+  
+        <!-- Support Links -->
+        <div class="col-md-3 mb-4">
+          <h6 class="text-uppercase fw-bold mb-3">Support</h6>
+          <ul class="list-unstyled">
+            <li *ngFor="let link of supportLinks">
+              <a [routerLink]="link.path" class="text-white text-decoration-none d-block mb-2">{{ link.label }}</a>
+            </li>
+          </ul>
+        </div>
+  
+        <!-- Contact Info -->
+        <div class="col-md-3 mb-4">
+          <h6 class="text-uppercase fw-bold mb-3">Contact</h6>
+          <p><i class="bi bi-house-door-fill me-2"></i> {{ contact.address }}</p>
+          <p><i class="bi bi-envelope-fill me-2"></i> {{ contact.email }}</p>
+          <p><i class="bi bi-telephone-fill me-2"></i> {{ contact.phone }}</p>
+        </div>
+      </div>
+  
+      <!-- Footer Bottom -->
+      <div class="text-center pt-3 border-top border-light-subtle">
+        <small>© 2025 {{ appName }}. All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+  

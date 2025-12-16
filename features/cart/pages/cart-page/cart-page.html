@@ -1,0 +1,38 @@
+<div class="container mt-5">
+  <h2 class="fw-bold mb-4">Your Cart</h2>
+
+  <div *ngIf="cartItems.length === 0" class="alert alert-info">
+    No items in cart.
+  </div>
+
+  <div class="row g-4" *ngIf="cartItems.length > 0">
+    <div class="col-md-6 col-lg-4 col-xl-3" *ngFor="let item of cartItems">
+      <div class="card h-100 shadow-sm border-0">
+        <img [src]="item.imageUrl" class="card-img-top" alt="{{ item.name }}">
+        <div class="card-body">
+          <h5 class="card-title fw-semibold">{{ item.name }}</h5>
+          <p class="card-text text-muted small">{{ item.description }}</p>
+          <h6 class="text-primary fw-bold">₹{{ item.price * item.quantity }}</h6>
+
+          <!-- Quantity Controls -->
+          <div class="d-flex align-items-center my-2">
+            <button class="btn btn-sm btn-outline-secondary me-2" (click)="decreaseQty(item)">-</button>
+            <span class="fw-bold">{{ item.quantity }}</span>
+            <button class="btn btn-sm btn-outline-secondary ms-2" (click)="increaseQty(item)">+</button>
+          </div>
+
+          <!-- Remove Button -->
+          <button class="btn btn-sm btn-danger mt-2" (click)="removeItem(item)">
+            Remove
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Proceed to Payment Button -->
+<div class="mt-4 text-end" *ngIf="cartItems.length > 0">
+  <button class="btn btn-primary px-4" (click)="proceedToPayment()">Proceed to Payment</button>
+</div>
+
+</div>

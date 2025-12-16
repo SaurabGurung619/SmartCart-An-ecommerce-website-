@@ -1,0 +1,47 @@
+<div class="container mt-5">
+    <div class="card shadow rounded">
+      <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">User Details</h4>
+      </div>
+      <div class="card-body">
+        <div class="row mb-3">
+          <div class="col-sm-3 fw-semibold">Name</div>
+          <div class="col-sm-9 text-muted">{{ user.name }}</div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-sm-3 fw-semibold">Email</div>
+          <div class="col-sm-9 text-muted">{{ user.email }}</div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-sm-3 fw-semibold">Phone</div>
+          <div class="col-sm-9 text-muted">{{ user.phone }}</div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-sm-3 fw-semibold">Location</div>
+          <div class="col-sm-9 text-muted">{{ user.location }}</div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-sm-3 fw-semibold">Landmark</div>
+          <div class="col-sm-9 text-muted">{{ user.landmark }}</div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-sm-3 fw-semibold">Password</div>
+          <div class="col-sm-9 text-muted">{{ user.password }}</div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-sm-3 fw-semibold">Role</div>
+          <div class="col-sm-9 text-muted">{{ user.role }}</div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-sm-3 fw-semibold">Status</div>
+          <div class="col-sm-9 text-muted">{{ user.status }}</div>
+        </div>
+      </div>
+      <div class="card-footer text-end">
+        <a routerLink="/users" class="btn btn-outline-secondary">
+          <i class="bi bi-arrow-left"></i> Back
+        </a>
+      </div>
+    </div>
+  </div>
+  

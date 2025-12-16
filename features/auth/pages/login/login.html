@@ -1,0 +1,48 @@
+<div class="login-container d-flex justify-content-center align-items-center vh-100 bg-light">
+    <div class="card shadow p-4 rounded-4" style="min-width: 350px; max-width: 400px;">
+      <h3 class="text-center mb-4 fw-bold">Welcome Back</h3>
+  
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label fw-semibold">Email address</label>
+          <input type="email" class="form-control" formControlName="email" id="email" placeholder="you@example.com">
+          <small class="text-danger" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+            Valid email is required.
+          </small>
+        </div>
+  
+        <!-- Password -->
+        <div class="mb-3">
+          <label for="password" class="form-label fw-semibold">Password</label>
+          <div class="input-group">
+            <input [type]="passwordVisible ? 'text' : 'password'" formControlName="password" class="form-control" id="password" placeholder="••••••••">
+            <span class="input-group-text bg-white" style="cursor: pointer;" (click)="togglePassword()">
+              <i class="bi" [ngClass]="passwordVisible ? 'bi-eye-slash' : 'bi-eye'"></i>
+            </span>
+          </div>
+          <small class="text-danger" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+            Password must be at least 6 characters.
+          </small>
+        </div>
+  
+        <!-- Login Button -->
+        <div class="d-grid mb-3">
+          <button class="btn btn-gradient fw-semibold" type="submit" [disabled]="loading || loginForm.invalid">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm me-2"></span>
+            Login
+          </button>
+        </div>
+  
+        <!-- Links -->
+        <div class="text-center">
+          <a routerLink="/auth/register" class="text-decoration-none text-gradient fw-semibold">New user? Register</a>
+          <br>
+          <a href="#" class="text-muted small">Forgot password?</a>
+        </div>
+  
+      </form>
+    </div>
+  </div>
+  
